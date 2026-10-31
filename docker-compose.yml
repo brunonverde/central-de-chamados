@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: central-chamados-db
+    environment:
+      POSTGRES_DB: central_chamados
+      POSTGRES_USER: chamados
+      POSTGRES_PASSWORD: chamados
+    ports:
+      - "5434:5432"
+    volumes:
+      - dados-postgres:/var/lib/postgresql
+
+volumes:
+  dados-postgres:
